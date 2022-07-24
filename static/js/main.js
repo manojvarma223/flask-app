@@ -70,6 +70,7 @@ $(function() {
 			buttons: {
 			  "Predict Another": function() {
 				$( this ).dialog( "close" );
+				$('#inputForm').trigger("reset");
 			  }
 			}
 		 } );
