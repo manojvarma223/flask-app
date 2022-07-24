@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+        <title>ML API</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <link href="https://code.jquery.com/ui/1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet"/>
+    </head>
+    <body>
+        <div class="content">
+    
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-md-10">
+                  
+        
+                  <div class="row justify-content-center">
+                    <div class="col-md-6">
+                      
+                      <h3 class="heading mb-4">Fish Species Classification</h3>
+                      <p>This model let's us predict the species of the fish using features such as weight, lengths, height and width.</p>
+        
+                      <p><img src="static/images/fishes.png" alt="Image" class="img-fluid"></p>
+        
+        
+                    </div>
+                    <div class="col-md-6">
+                      
+                      <form class="mb-5" action="{{ url_for('predict')}}" method="post" id="inputForm" name="inputForm">
+                        <div class="row">
+                          <div class="col-md-12 form-group">
+                            <input type="text" class="form-control" name="weight" id="name" placeholder="Weight" required="required">
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-md-12 form-group">
+                            <input type="text" class="form-control" id="length1" name="length1" placeholder="Length 1" required="required" />
+                          </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                              <input type="text" class="form-control" id="length2" name="length2" placeholder="Length 2" required="required" />
+                            </div>
+                          </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                              <input type="text" class="form-control" id="length3" name="length3" placeholder="Length 3" required="required" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                              <input type="text" class="form-control" id="height" name="height" placeholder="Height" required="required" />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 form-group">
+                              <input type="text" class="form-control" id="width" name="width" placeholder="Width" required="required" />
+                            </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <input type="submit" value="Predict" class="btn btn-primary rounded-0 py-2 px-4">
+                          </div>
+                        </div>
+                      </form>
+                      <div id="dialog"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" crossorigin="anonymous"></script>
+    <script src="static/js/bootstrap.min.js"></script>
+    <script src="static/js/jquery.validate.min.js"></script>
+    <script src="static/js/main.js"></script>
+</html>
